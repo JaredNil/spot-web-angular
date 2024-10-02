@@ -1,0 +1,19 @@
+<sp-box>
+    <div class="flex flex-col gap-y-4 px-5 py-4">
+        <a *ngFor="let route of routes" routerLink="{{route.href}}" 
+            class="transition flex h-auto w-full 
+            cursor-pointer flex-row items-center gap-x-4 py-1 
+            font-medium hover:text-white
+            text-neutral-400 
+            ">
+            <icon-builder iconTitle={{route.icon}} />
+            <p class="w-100 truncate">
+                {{ route.label }}
+            </p>
+        </a>
+
+    </div>
+</sp-box>
+<sp-box class="h-full overflow-y-auto">liba
+    <!-- <Library songs={songs} />  -->
+</sp-box>

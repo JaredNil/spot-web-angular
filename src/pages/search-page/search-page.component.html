@@ -1,0 +1,46 @@
+<div class="mb-2 flex flex-col gap-y-6">
+    <h1 class="text-3xl font-semibold text-white">Search</h1>
+</div>
+<sp-input type="text" (disabled)="true" className="sceleton xl:w-[50%]"
+    placeholder="Scarlxrd...  architect...   genre..." />
+<div className="my-3 flex flex-col ">
+    @if(isLoadingData){
+    <div *ngFor="let song of loadingPlaceholder"
+        class="group relative my-2 flex cursor-pointer 
+                items-center gap-x-4 
+                overflow-hidden rounded-md bg-neutral-100/10 
+                pr-4 transition 
+                hover:bg-neutral-100/20  xl:w-[50%]">
+        <div class="relative h-[64px] w-[64px]">
+            <div class="sceleton h-full w-full object-cover  ">
+            </div>
+            <div class="flex w-[50%] flex-col">
+                <p class="sceleton mb-2 w-full truncate py-2 font-medium"></p>
+                <p class="sceleton w-[60%] truncate py-3  font-medium"></p>
+            </div>
+        </div>
+    </div>
+        } 
+        @else {
+            @for(item of searching; track item){
+            <!--<div class="flex w-full flex-col gap-y-2">
+
+            <div  class="flex w-full items-center gap-x-4">
+                <div className="flex-1">
+                     <MediaItem />
+                </div>
+            </div>  -->
+
+            } @empty{
+            <div class="
+                flex 
+                w-full 
+                flex-col 
+                gap-y-2 
+                text-neutral-400
+            ">
+            No songs found.
+        </div>
+        }
+        }
+    </div>

@@ -1,0 +1,9 @@
+@if(!isLoading && !flat){
+    <sp-album-normal [album]="album"></sp-album-normal>
+} @else if(!isLoading && flat) {
+    <sp-album-flat [album]="album"></sp-album-flat>
+} @else if(isLoading && !flat) {
+    <sp-album-normal-sceleton></sp-album-normal-sceleton>
+} @else if(isLoading && flat) {
+    <sp-album-flat-sceleton></sp-album-flat-sceleton>
+}

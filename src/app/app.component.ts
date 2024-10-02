@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: [
+    './styles/app.component.reset.scss', 
+    './styles/app.component.global.scss', 
+    './styles/app.component.scss', 
+    './styles/fragment/loaders.scss', 
+    './styles/fragment/playlist.scss', 
+    './styles/fragment/sceleton.scss'
+  ],
 })
 export class AppComponent {
-  title = 'test-ng';
+  title = 'sp-ng-project';
 }

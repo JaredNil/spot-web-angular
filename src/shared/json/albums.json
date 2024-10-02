@@ -1,0 +1,32 @@
+{
+    "albums": [
+        {
+            "author": "Spotify",
+            "id": 0,
+            "imagePath": "/assets/webp/trap_metal.webp",
+            "title": "Trap Metal",
+            "user_id": 0
+        },
+        {
+            "author": "Spotify",
+            "id": 1,
+            "imagePath": "/assets/webp/heavy_metal.webp",
+            "title": "Heavy Metal",
+            "user_id": 0
+        },
+        {
+            "author": "Spotify",
+            "id": 2,
+            "imagePath": "/assets/png/atm.png",
+            "title": "Atmosphera",
+            "user_id": 0
+        },
+        {
+            "author": "user",
+            "id": 3,
+            "imagePath": "/assets/png/atm.png",
+            "title": "UserAlbum",
+            "user_id": 1
+        }
+    ]
+}

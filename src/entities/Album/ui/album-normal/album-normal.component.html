@@ -1,0 +1,15 @@
+<div class=" relative aspect-square 
+					h-full w-full 
+					overflow-hidden rounded-md">
+    <img class="pointer-events-none w-full select-none object-cover" [src]="album.imagePath" alt="/" />
+</div>
+<div class="flex w-full flex-col items-start gap-y-1 pt-2">
+    <p class="w-full truncate font-semibold text-white">{{album.title}}</p>
+    <p class="w-full truncate pb-4 text-sm  text-neutral-400">By {{album.author}}</p>
+</div>
+<div class="absolute bottom-[32%] right-5 flex items-center justify-center rounded-full 
+				bg-green-500 p-4 opacity-0 drop-shadow-md 
+				transition hover:scale-110 group-hover:opacity-100
+				">
+    <icon-builder iconTitle='likedSongs' />
+</div>

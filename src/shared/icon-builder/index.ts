@@ -1,0 +1,1 @@
+export { IconBuilderComponent as IconBuilder } from './ui/icon-builder.component'

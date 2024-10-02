@@ -1,0 +1,58 @@
+<div class="mb-2">
+    <h1 class="relative text-3xl font-semibold text-white">
+        Welcome back,
+        <span class="sceletonHeader inline-block h-full w-32
+                    select-none rounded-lg ">
+            %USER%
+        </span>
+    </h1>
+</div>
+
+<div class="mt-2">
+    <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <sp-album [flat]="true" [isLoading]="isLoadingData" />
+    </div>
+
+    <span [ngClass]="{
+        'mb-3 mt-5 inline-block h-full select-none rounded-lg pr-4 text-2xl ': true,
+        'sceletonHeader transition-all duration-500 text-transparent': isLoadingData,
+        'text-white': !isLoadingData
+      }">
+        {{commonAlbumsCollection.title}}
+    </span>
+
+
+    <div class="
+        grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 
+        lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8">
+        <sp-album 
+            *ngFor="let album of commonAlbumsCollection.albums" 
+            [flat]="commonAlbumsCollection.flat" 
+            [isLoading]="isLoadingData"
+            [album]="album" 
+        />
+    </div>
+
+    <span [ngClass]="{
+        'mb-3 mt-5 inline-block h-full select-none rounded-lg pr-4 text-2xl ': true,
+        'sceletonHeader transition-all duration-500 text-transparent': isLoadingData,
+        'text-white': !isLoadingData
+      }">
+        Пользовательские плейлисты
+    </span>
+
+    <span [ngClass]="{
+        'mb-4 mt-4 flex h-full select-none justify-center rounded-lg pr-4 text-xl font-light': true,
+        'sceletonHeader text-transparent transition-all duration-500': isLoadingData,
+    }">
+        <span [ngClass]="{'text-transparent': isLoadingData, 'text-white': !isLoadingData}">Войдите для создания плейлистов.</span>
+    </span>
+
+    <sp-button 
+        [class]="'text-xl font-light tracking-wide text-white text-center'"
+    >
+        Вход / Регистрация
+    </sp-button>
+
+
+</div>
