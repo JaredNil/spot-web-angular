@@ -1,9 +1,9 @@
 <div class="mb-2 flex flex-col gap-y-6">
     <h1 class="text-3xl font-semibold text-white">Search</h1>
 </div>
-<sp-input type="text" (disabled)="true" className="sceleton xl:w-[50%]"
+<sp-input type="text" (disabled)="true" class="sceleton xl:w-[50%]"
     placeholder="Scarlxrd...  architect...   genre..." />
-<div className="my-3 flex flex-col ">
+<div class="my-3 flex flex-col ">
     @if(isLoadingData){
     <div *ngFor="let song of loadingPlaceholder"
         class="group relative my-2 flex cursor-pointer 
@@ -26,7 +26,7 @@
             <!--<div class="flex w-full flex-col gap-y-2">
 
             <div  class="flex w-full items-center gap-x-4">
-                <div className="flex-1">
+                <div class="flex-1">
                      <MediaItem />
                 </div>
             </div>  -->

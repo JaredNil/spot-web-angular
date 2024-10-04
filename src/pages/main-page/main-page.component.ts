@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Album, AlbumsCollection } from '../../entities/Album/model/types/album';
 import { JsonReaderService } from '../../feature/json-reader/json-reader.service';
+import { ModalService } from '../../feature/modal/model/modal.service';
 
 @Component({
   selector: 'sp-main-page',
@@ -9,13 +10,20 @@ import { JsonReaderService } from '../../feature/json-reader/json-reader.service
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private jsonReaderService: JsonReaderService){}
+  constructor(
+    private jsonReaderService: JsonReaderService,
+    private modalService: ModalService){
+    }
 
   isLoadingData = true
   commonAlbumsCollection: AlbumsCollection = {
     title: 'Общие плейлисты',
     flat: false,
     albums: []
+  }
+
+  authModalHandler = () => {
+    this.modalService.setActionModal('auth')
   }
 
   ngOnInit(): void {

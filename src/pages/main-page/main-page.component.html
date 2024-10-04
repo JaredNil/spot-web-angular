@@ -41,14 +41,15 @@
         Пользовательские плейлисты
     </span>
 
-    <span [ngClass]="{
+    <span 
+    [ngClass]="{
         'mb-4 mt-4 flex h-full select-none justify-center rounded-lg pr-4 text-xl font-light': true,
         'sceletonHeader text-transparent transition-all duration-500': isLoadingData,
     }">
         <span [ngClass]="{'text-transparent': isLoadingData, 'text-white': !isLoadingData}">Войдите для создания плейлистов.</span>
     </span>
 
-    <sp-button 
+    <sp-button (click)="authModalHandler()"
         [class]="'text-xl font-light tracking-wide text-white text-center'"
     >
         Вход / Регистрация

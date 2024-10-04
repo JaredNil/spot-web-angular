@@ -13,12 +13,14 @@ import { SearchPageModule } from "../pages/search-page/search-page.module";
 import { UploadPageModule } from "../pages/upload-page/upload-page.module";
 import { JsonReaderService } from "../feature/json-reader/json-reader.service";
 import { HttpClientModule } from "@angular/common/http";
+import { ModalModule } from "../feature/modal/modal.module";
 
 @NgModule({
     declarations: [AppComponent,],
     imports: [BrowserModule, RouterOutlet, AppRoutingModule, HttpClientModule,   // common ng
         MainPageModule, SearchPageModule, UploadPageModule, // pages
         AlbumModule, // entites
+        ModalModule, // feature
         SidebarModule, // widgets
 
         HeaderComponent, // big components
