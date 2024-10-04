@@ -1,9 +1,10 @@
-import {  AfterViewInit, ChangeDetectionStrategy, Component,  HostBinding,  TemplateRef, ViewChild } from '@angular/core';
+import {  AfterViewInit, ChangeDetectionStrategy, Component,  HostBinding,  HostListener,  TemplateRef, ViewChild } from '@angular/core';
 import { ModalService } from '../model/modal.service';
 
 @Component({
   selector: 'sp-modal',
   templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss'],
   host: {'class': `pointer-events-none fixed inset-0 z-50
   w-full transition duration-150 pointer-events-auto z-50
   animate opacity-100`,},
@@ -21,7 +22,19 @@ export class ModalComponent implements AfterViewInit {
   isLoadingData = false
 
   // Привязка класса отображения модалки
-  @HostBinding('class.hidden') get isHidden() { return !this.isOpenModal }
+  @HostBinding('class.hiddenModal') get isHidden() { return !this.isOpenModal }
+
+  // Выключение модалки при клике по wrapper'у
+  @HostListener('click', ['$event']) onClick(event: any) {
+    if (event.target.tagName === 'ARTICLE') {
+      this.isOpenModal = false
+      this.modalOutlet = null
+    }
+  }
+
+  @HostListener('window:keydown.escape') handleKeyDown(event: KeyboardEvent) { console.log('escape') }
+   
+
   
   // Все входящие в данный модуль шаблоны модальных окон
   @ViewChild('authTemplate', {read: TemplateRef}) authTemplate!: TemplateRef<any> | null;

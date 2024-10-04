@@ -1,12 +1,15 @@
-<div class="flex h-full w-full items-center justify-center
+<article class="flex h-full w-full items-center justify-center
         bg-neutral-900/0 transition duration-100
         animate bg-neutral-900/70">
     <div class="rounded-xl bg-[#282828] px-5 pb-5 pt-2 transition 
-        duration-300 w-[90%] max-w-[540px] sm:w-[60%]  scale-100">
-        <ng-container *ngTemplateOutlet="modalOutlet">
+        duration-300 w-[90%] max-w-[540px] sm:w-[60%] scale-100"
+        [ngClass]="{hiddenModalContainer : !isOpenModal}"
+        >
+        <ng-container 
+            *ngTemplateOutlet="modalOutlet">
         </ng-container>
     </div>
-</div>
+</article>
 
 
 <ng-template #loginTemplate>
@@ -15,32 +18,7 @@
 
 
 <ng-template #authTemplate>
-    <div class="flex flex-col">
-        <h2 class=" mb-5 mt-2 select-none text-center 
-            text-3xl font-semibold text-white">
-            Авторизация
-        </h2>
-        <div class="flex pb-3">
-            <sp-button class="mx-2 ml-auto flex
-                    h-10 items-center justify-center bg-zinc-300
-                    text-base font-normal text-black">
-
-                <span class="mx-2">Войти по Github</span>
-            </sp-button>
-            <sp-button class="mx-2 ml-auto flex
-                    h-10 items-center justify-center bg-zinc-300
-                    text-base font-normal text-black">
-                <span class="mx-2">Войти по Google</span>
-            </sp-button>
-        </div>
-        <div class="select-none font-extralight">Введите имя пользователя</div>
-        <sp-input autoFocus type="text" class="mb-2" placeholder="Sth nicknam" />
-        <div class="select-none font-extralight">Введите имя пользователя</div>
-        <sp-input type="text" class="mb-2" placeholder="Sth password" />
-        <sp-button class="ml-auto mt-[15px] text-xl text-neutral-900/80">
-            Войти
-        </sp-button>
-    </div>
+    <sp-auth-modal/>
 </ng-template>
 
 
